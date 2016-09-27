@@ -6,15 +6,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class MainService {
 
-    private final TextService textService;
+    //Так не работает
+//    private final TextService textService;
+//
+//    private final CalculationService calculationService;
+//
+//    @Autowired
+//    public MainService(TextService textService,CalculationService calculationService){
+//        this.textService = textService;
+//        this.calculationService = calculationService;
+//    }
 
-    private final CalculationService calculationService;
+    //Так работает
+    @Autowired
+    private TextService textService;
 
     @Autowired
-    public MainService(TextService textService,CalculationService calculationService){
-        this.textService = textService;
-        this.calculationService = calculationService;
-    }
+    private CalculationService calculationService;
 
     public String calculateAndFormat(String format, Integer a,Integer b){
         Integer sum = calculationService.sum(a, b);
