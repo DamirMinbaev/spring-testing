@@ -17,8 +17,8 @@ public class SpringTestingApplicationTests {
 
 	@Test
 	public void mainServiceTest() {
-        String s = mainService.calculateAndFormat("%s", 1, 2);
-        Assert.assertEquals("3",s);
+        String s = mainService.calculateAndFormat("%s", 2, 3);
+        Assert.assertEquals("5",s);
     }
 
 }
